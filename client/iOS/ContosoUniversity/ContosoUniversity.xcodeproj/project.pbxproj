@@ -12,6 +12,8 @@
 		A31A0C361B62D26C003BABF8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31A0C351B62D26C003BABF8 /* CoreData.framework */; };
 		A31A0C391B62D390003BABF8 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31A0C381B62D390003BABF8 /* WindowsAzureMobileServices.framework */; };
 		A31A0C3D1B62D472003BABF8 /* DepartmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A0C3C1B62D472003BABF8 /* DepartmentsTableViewController.m */; };
+		A31A0C451B62D8B0003BABF8 /* StudentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A0C441B62D8B0003BABF8 /* StudentsTableViewController.m */; };
+		A31A0C481B62D8C5003BABF8 /* InstructorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A0C471B62D8C5003BABF8 /* InstructorsTableViewController.m */; };
 		D0282F1E1B62A73C007880CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F1D1B62A73C007880CE /* main.m */; };
 		D0282F211B62A73C007880CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F201B62A73C007880CE /* AppDelegate.m */; };
 		D0282F241B62A73C007880CE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F231B62A73C007880CE /* FirstViewController.m */; };
@@ -44,6 +46,10 @@
 		A31A0C381B62D390003BABF8 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = ../sdk/WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		A31A0C3B1B62D472003BABF8 /* DepartmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DepartmentsTableViewController.h; path = Departments/DepartmentsTableViewController.h; sourceTree = "<group>"; };
 		A31A0C3C1B62D472003BABF8 /* DepartmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DepartmentsTableViewController.m; path = Departments/DepartmentsTableViewController.m; sourceTree = "<group>"; };
+		A31A0C431B62D8B0003BABF8 /* StudentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentsTableViewController.h; path = Students/StudentsTableViewController.h; sourceTree = "<group>"; };
+		A31A0C441B62D8B0003BABF8 /* StudentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentsTableViewController.m; path = Students/StudentsTableViewController.m; sourceTree = "<group>"; };
+		A31A0C461B62D8C5003BABF8 /* InstructorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructorsTableViewController.h; path = Instructors/InstructorsTableViewController.h; sourceTree = "<group>"; };
+		A31A0C471B62D8C5003BABF8 /* InstructorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructorsTableViewController.m; path = Instructors/InstructorsTableViewController.m; sourceTree = "<group>"; };
 		D0282F181B62A73C007880CE /* ContosoUniversity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContosoUniversity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0282F1C1B62A73C007880CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0282F1D1B62A73C007880CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,24 @@
 			name = Departments;
 			sourceTree = "<group>";
 		};
+		A31A0C411B62D85A003BABF8 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				A31A0C431B62D8B0003BABF8 /* StudentsTableViewController.h */,
+				A31A0C441B62D8B0003BABF8 /* StudentsTableViewController.m */,
+			);
+			name = Students;
+			sourceTree = "<group>";
+		};
+		A31A0C421B62D861003BABF8 /* Instructors */ = {
+			isa = PBXGroup;
+			children = (
+				A31A0C461B62D8C5003BABF8 /* InstructorsTableViewController.h */,
+				A31A0C471B62D8C5003BABF8 /* InstructorsTableViewController.m */,
+			);
+			name = Instructors;
+			sourceTree = "<group>";
+		};
 		D0282F0F1B62A73C007880CE = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +151,8 @@
 		D0282F1A1B62A73C007880CE /* ContosoUniversity */ = {
 			isa = PBXGroup;
 			children = (
+				A31A0C421B62D861003BABF8 /* Instructors */,
+				A31A0C411B62D85A003BABF8 /* Students */,
 				A31A0C3A1B62D458003BABF8 /* Departments */,
 				A31A0C2A1B62B99B003BABF8 /* Courses */,
 				D0282F531B62BF39007880CE /* models */,
@@ -296,6 +322,8 @@
 				A31A0C2D1B62BA1D003BABF8 /* CoursesTableViewController.m in Sources */,
 				D0282F271B62A73C007880CE /* SecondViewController.m in Sources */,
 				D0282F461B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld in Sources */,
+				A31A0C451B62D8B0003BABF8 /* StudentsTableViewController.m in Sources */,
+				A31A0C481B62D8C5003BABF8 /* InstructorsTableViewController.m in Sources */,
 				D0282F211B62A73C007880CE /* AppDelegate.m in Sources */,
 				A31A0C3D1B62D472003BABF8 /* DepartmentsTableViewController.m in Sources */,
 				D0282F241B62A73C007880CE /* FirstViewController.m in Sources */,
