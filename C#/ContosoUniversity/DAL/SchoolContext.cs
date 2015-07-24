@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ContosoUniversity.DAL
 {
-    public class SchoolContext : DbContext
+    public class    SchoolContext : DbContext
     {
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
