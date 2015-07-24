@@ -272,8 +272,10 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
+    <Compile Include="Controllers\InstructorsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="DAL\SchoolConfiguration.cs" />
@@ -282,6 +284,8 @@
     <Compile Include="DAL\SchoolInterceptorLogging.cs" />
     <Compile Include="DAL\SchoolInterceptorTransientErrors.cs" />
     <Compile Include="DomainManagers\CourseMappedDomainManager.cs" />
+    <Compile Include="DomainManagers\DepartmentMappedDomainManager.cs" />
+    <Compile Include="DomainManagers\InstructorMappedDomainManager.cs" />
     <Compile Include="DomainManagers\StudentMappedDomainManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -316,8 +320,10 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseDTO.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\DepartmentDTO.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\InstructorDTO.cs" />
     <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
