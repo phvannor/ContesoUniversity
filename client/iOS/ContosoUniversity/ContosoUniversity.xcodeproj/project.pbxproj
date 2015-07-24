@@ -15,6 +15,7 @@
 		D0282F2C1B62A73C007880CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0282F2B1B62A73C007880CE /* Images.xcassets */; };
 		D0282F2F1B62A73C007880CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0282F2D1B62A73C007880CE /* LaunchScreen.xib */; };
 		D0282F3B1B62A73C007880CE /* ContosoUniversityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F3A1B62A73C007880CE /* ContosoUniversityTests.m */; };
+		D0282F461B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0282F441B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		D0282F341B62A73C007880CE /* ContosoUniversityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContosoUniversityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0282F391B62A73C007880CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0282F3A1B62A73C007880CE /* ContosoUniversityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContosoUniversityTests.m; sourceTree = "<group>"; };
+		D0282F451B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContosoUniversityDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				D0282F2B1B62A73C007880CE /* Images.xcassets */,
 				D0282F2D1B62A73C007880CE /* LaunchScreen.xib */,
 				D0282F1B1B62A73C007880CE /* Supporting Files */,
+				D0282F441B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld */,
 			);
 			path = ContosoUniversity;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0282F271B62A73C007880CE /* SecondViewController.m in Sources */,
+				D0282F461B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld in Sources */,
 				D0282F211B62A73C007880CE /* AppDelegate.m in Sources */,
 				D0282F241B62A73C007880CE /* FirstViewController.m in Sources */,
 				D0282F1E1B62A73C007880CE /* main.m in Sources */,
@@ -441,6 +445,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0282F441B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0282F451B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodel */,
+			);
+			currentVersion = D0282F451B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodel */;
+			path = ContosoUniversityDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0282F101B62A73C007880CE /* Project object */;
 }
