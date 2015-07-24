@@ -17,7 +17,7 @@ namespace ContosoUniversity.Models
         [Display(Name = "Hire Date")]
         public DateTime HireDate { get; set; }
 
-        public ICollection<CourseDTO> Courses { get; set; }
+        //public ICollection<CourseDTO> Courses { get; set; }
 
         // public virtual OfficeAssignment OfficeAssignment { get; set; }
     }

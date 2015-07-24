@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -19,7 +20,7 @@ namespace ContosoUniversity.DomainManagers
         }
         public override Task<DepartmentDTO> UpdateAsync(string id, Delta<DepartmentDTO> patch)
         {
-            return this.UpdateEntityAsync(patch, id);
+            return this.UpdateEntityAsync(patch, Convert.ToInt32(id));
         }
         public override Task<bool> DeleteAsync(string id)
         {

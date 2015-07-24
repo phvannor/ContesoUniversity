@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Web.Http.OData;
 using ContosoUniversity.Models;
 using Microsoft.Azure.Mobile.Server;
+using System;
 
 namespace ContosoUniversity.DomainManagers
 {
@@ -19,8 +20,9 @@ namespace ContosoUniversity.DomainManagers
         }
         public override Task<CourseDTO> UpdateAsync(string id, Delta<CourseDTO> patch)
         {
-            return this.UpdateEntityAsync(patch, id);
+            return this.UpdateEntityAsync(patch, Convert.ToInt32(id));
         }
+
         public override Task<bool> DeleteAsync(string id)
         {
             return this.DeleteItemAsync(id);

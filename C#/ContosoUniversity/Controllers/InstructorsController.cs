@@ -14,6 +14,7 @@ using ContosoUniversity.DAL;
 using ContosoUniversity.DomainManagers;
 using ContosoUniversity.Models;
 using Microsoft.Azure.Mobile.Server;
+using System.Web.Http.OData;
 
 namespace ContosoUniversity.Controllers
 {
@@ -33,9 +34,16 @@ namespace ContosoUniversity.Controllers
             return Lookup(id);
         }
 
-        public IQueryable<InstructorDTO> GetAllStudents()
+        public IQueryable<InstructorDTO> GetAllInstructors()
         {
             return Query();
+        }
+
+
+        // PATCH tables/Courses/4
+        public Task<InstructorDTO> PatchInstructors(string id, Delta<InstructorDTO> patch)
+        {
+            return UpdateAsync(id, patch);
         }
     }
 }

@@ -5,6 +5,8 @@ using ContosoUniversity.DAL;
 using ContosoUniversity.DomainManagers;
 using ContosoUniversity.Models;
 using Microsoft.Azure.Mobile.Server;
+using System.Threading.Tasks;
+using System.Web.Http.OData;
 
 namespace ContosoUniversity.Controllers
 {
@@ -24,9 +26,14 @@ namespace ContosoUniversity.Controllers
             return Lookup(id);
         }
 
-        public IQueryable<DepartmentDTO> GetAllStudents()
+        public IQueryable<DepartmentDTO> GetAllDepartments()
         {
             return Query();
         }
+
+        public Task<DepartmentDTO> PatchDepartments(string id, Delta<DepartmentDTO> patch)
+        {
+            return UpdateAsync(id, patch);
+        }        
     }
 }

@@ -14,6 +14,7 @@ using ContosoUniversity.DAL;
 using ContosoUniversity.DomainManagers;
 using ContosoUniversity.Models;
 using Microsoft.Azure.Mobile.Server;
+using System.Web.Http.OData;
 
 namespace ContosoUniversity.Controllers
 {
@@ -38,7 +39,11 @@ namespace ContosoUniversity.Controllers
             return Query();
         }
 
-
+        // PATCH tables/Courses/4
+        public Task<StudentDTO> PatchStudents(string id, Delta<StudentDTO> patch)
+        {
+            return UpdateAsync(id, patch);
+        }
         /*
         // GET: api/Students
         [HttpGet, Route("api/students")]
