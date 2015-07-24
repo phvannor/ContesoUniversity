@@ -40,5 +40,11 @@ namespace ContosoUniversity.Controllers
         {
             return DeleteAsync(id);
         }
+
+        public async Task<IHttpActionResult> PostDepartment(DepartmentDTO item)
+        {
+            DepartmentDTO current = await InsertAsync(item);
+            return CreatedAtRoute("Tables", new { id = current.Id }, current);
+        }
     }
 }

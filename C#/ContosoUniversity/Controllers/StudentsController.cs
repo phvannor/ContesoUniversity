@@ -49,6 +49,12 @@ namespace ContosoUniversity.Controllers
         {
             return DeleteAsync(id);
         }
+
+        public async Task<IHttpActionResult> PostStudents(StudentDTO item)
+        {
+            StudentDTO current = await InsertAsync(item);
+            return CreatedAtRoute("Tables", new { id = current.Id }, current);
+        }
         /*
         // GET: api/Students
         [HttpGet, Route("api/students")]
