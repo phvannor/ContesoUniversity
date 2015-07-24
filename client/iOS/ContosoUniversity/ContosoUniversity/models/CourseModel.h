@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CoursesModel : NSObject
+@interface CourseModel : NSObject
 
 @property (nonatomic) NSInteger departmentID;
 
@@ -18,5 +18,6 @@
 
 @property (nonatomic) NSString *id;
 
+- (NSDictionary *)dictionary;
 
 @end
