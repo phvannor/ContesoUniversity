@@ -24,6 +24,11 @@
 		D0282F3B1B62A73C007880CE /* ContosoUniversityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F3A1B62A73C007880CE /* ContosoUniversityTests.m */; };
 		D0282F461B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0282F441B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld */; };
 		D0282F4D1B62B36E007880CE /* CourseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F4C1B62B36E007880CE /* CourseProxy.m */; };
+<<<<<<< HEAD
+=======
+		D0282F4F1B62B95C007880CE /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0282F4E1B62B95C007880CE /* WindowsAzureMobileServices.framework */; };
+		D0282F511B62BF0D007880CE /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F501B62BF0D007880CE /* CourseModel.m */; };
+>>>>>>> origin/client
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +72,12 @@
 		D0282F451B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContosoUniversityDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D0282F4B1B62B355007880CE /* CourseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseProxy.h; path = proxies/CourseProxy.h; sourceTree = "<group>"; };
 		D0282F4C1B62B36E007880CE /* CourseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseProxy.m; path = proxies/CourseProxy.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		D0282F4E1B62B95C007880CE /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = ../sdk/WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		D0282F501B62BF0D007880CE /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseModel.m; path = models/CourseModel.m; sourceTree = "<group>"; };
+		D0282F521B62BF31007880CE /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseModel.h; path = models/CourseModel.h; sourceTree = "<group>"; };
+>>>>>>> origin/client
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +218,13 @@
 		D0282F531B62BF39007880CE /* models */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				A31A0C321B62D0E2003BABF8 /* Courses.h */,
+				A31A0C331B62D0E2003BABF8 /* Courses.m */,
+=======
 				D0282F521B62BF31007880CE /* CourseModel.h */,
 				D0282F501B62BF0D007880CE /* CourseModel.m */,
+>>>>>>> origin/client
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -323,6 +339,11 @@
 				A31A0C3D1B62D472003BABF8 /* DepartmentsTableViewController.m in Sources */,
 				D0282F241B62A73C007880CE /* FirstViewController.m in Sources */,
 				D0282F1E1B62A73C007880CE /* main.m in Sources */,
+<<<<<<< HEAD
+				A31A0C341B62D0E2003BABF8 /* Courses.m in Sources */,
+=======
+				D0282F511B62BF0D007880CE /* CourseModel.m in Sources */,
+>>>>>>> origin/client
 				D0282F4D1B62B36E007880CE /* CourseProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +476,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-                     /Users/shrirang/my/repo/ContosoUniversity/client/iOS/sdk,
+                                        /Users/shrirang/my/repo/ContosoUniversity/client/iOS/sdk,
 				);
 				INFOPLIST_FILE = ContosoUniversity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,17 +16,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> origin/client
     // Initialize the Mobile Service client with your URL and key
     self.client = [MSClient clientWithApplicationURLString:@"http://contoseapp.azurewebsites.net/"
                                             applicationKey:nil];
     
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+<<<<<<< HEAD
+   
+=======
+>>>>>>> origin/client
     NSManagedObjectContext *context = delegate.managedObjectContext;
     MSCoreDataStore *store = [[MSCoreDataStore alloc] initWithManagedObjectContext:context];
     
     self.client.syncContext = [[MSSyncContext alloc] initWithDelegate:nil dataSource:store callback:nil];
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> origin/client
     return YES;
 }
 
