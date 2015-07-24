@@ -8,16 +8,16 @@ using Microsoft.Azure.Mobile.Server;
 
 namespace ContosoUniversity.DomainManagers
 {
-    public class CourseMappedDomainManager : MappedEntityDomainManager<CourseDTO, Course>
+    public class InstructorMappedDomainManager : MappedEntityDomainManager<InstructorDTO, Instructor>
     {
-        public CourseMappedDomainManager(DbContext context, HttpRequestMessage request, bool enableSoftDelete)
+        public InstructorMappedDomainManager(DbContext context, HttpRequestMessage request, bool enableSoftDelete)
             : base(context, request, enableSoftDelete)
         { }
-        public override SingleResult<CourseDTO> Lookup(string id)
+        public override SingleResult<InstructorDTO> Lookup(string id)
         {
-            return this.LookupEntity(c => c.CourseID.ToString() == id);
+            return this.LookupEntity(c => c.ID.ToString() == id);
         }
-        public override Task<CourseDTO> UpdateAsync(string id, Delta<CourseDTO> patch)
+        public override Task<InstructorDTO> UpdateAsync(string id, Delta<InstructorDTO> patch)
         {
             return this.UpdateEntityAsync(patch, id);
         }

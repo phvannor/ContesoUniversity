@@ -41,9 +41,20 @@ namespace ContosoUniversity.App_Start
 
                 c.CreateMap<Course, CourseDTO>()
                     .ForMember(dto => dto.Id, map => map.MapFrom(db => MySqlFunctions.LTRIM(MySqlFunctions.StringConvert(db.CourseID))));
-
                 c.CreateMap<CourseDTO, Course>()
                     .ForMember(db => db.CourseID, map => map.MapFrom(dto => MySqlFunctions.LongParse(dto.Id)));
+
+                c.CreateMap<Department, DepartmentDTO>()
+                    .ForMember(dto => dto.Id, map => map.MapFrom(db => MySqlFunctions.LTRIM(MySqlFunctions.StringConvert(db.DepartmentID))));
+                c.CreateMap<DepartmentDTO, Department>()
+                    .ForMember(db => db.DepartmentID, map => map.MapFrom(dto => MySqlFunctions.LongParse(dto.Id)));
+
+
+                c.CreateMap<Instructor, InstructorDTO>()
+                    .ForMember(dto => dto.Id, map => map.MapFrom(db => MySqlFunctions.LTRIM(MySqlFunctions.StringConvert(db.ID))));
+                c.CreateMap<InstructorDTO, Instructor>()
+                    .ForMember(db => db.ID, map => map.MapFrom(dto => MySqlFunctions.LongParse(dto.Id)));
+
             });
 
             new MobileAppConfiguration()

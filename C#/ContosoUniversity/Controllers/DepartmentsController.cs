@@ -8,7 +8,7 @@ using Microsoft.Azure.Mobile.Server;
 
 namespace ContosoUniversity.Controllers
 {
-    public class CoursesController : TableController<CourseDTO>
+    public class DepartmentsController : TableController<DepartmentDTO>
     {
         private SchoolContext context;
 
@@ -16,15 +16,15 @@ namespace ContosoUniversity.Controllers
         {
             base.Initialize(controllerContext);
             context = new SchoolContext();
-            this.DomainManager = new CourseMappedDomainManager(context, controllerContext.Request, false);
+            this.DomainManager = new DepartmentMappedDomainManager(context, controllerContext.Request, false);
         }
-        
-        public SingleResult<CourseDTO> Get(string id)
+
+        public SingleResult<DepartmentDTO> Get(string id)
         {
             return Lookup(id);
         }
 
-        public IQueryable<CourseDTO> GetAllStudents()
+        public IQueryable<DepartmentDTO> GetAllStudents()
         {
             return Query();
         }
