@@ -7,6 +7,9 @@ using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Server.Config;
+using AutoMapper;
+using ContosoUniversity.Models;
+using ContosoUniversity.Utilities;
 
 namespace ContosoUniversity.App_Start
 {
@@ -16,22 +19,40 @@ namespace ContosoUniversity.App_Start
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
+            /*
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            */
 
             // Web API routes
-            config.MapHttpAttributeRoutes();
-
+            config.MapHttpAttributeRoutes();            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            var maConfig = new MobileAppConfiguration();          
+            Mapper.Initialize(c =>
+            {
+                c.CreateMap<Student, StudentDTO>()
+                    .ForMember(dto => dto.Id, map => map.MapFrom(db => MySqlFunctions.LTRIM(MySqlFunctions.StringConvert(db.ID))));
+                c.CreateMap<StudentDTO, Student>()
+                    .ForMember(db => db.ID, map => map.MapFrom(dto => MySqlFunctions.LongParse(dto.Id)));
 
-            maConfig.ApplyTo(config);           
+                c.CreateMap<Course, CourseDTO>()
+                    .ForMember(dto => dto.Id, map => map.MapFrom(db => MySqlFunctions.LTRIM(MySqlFunctions.StringConvert(db.CourseID))));
 
+                c.CreateMap<CourseDTO, Course>()
+                    .ForMember(db => db.CourseID, map => map.MapFrom(dto => MySqlFunctions.LongParse(dto.Id)));
+            });
+
+            new MobileAppConfiguration()
+                //.UseDefaultConfiguration()
+                .AddTablesWithEntityFramework()
+                //.UseDefaultConfiguration()
+                //.AddAppServiceAuthentication()
+                //.MapApiControllers()
+                .ApplyTo(config);                       
         }
     }
 }
