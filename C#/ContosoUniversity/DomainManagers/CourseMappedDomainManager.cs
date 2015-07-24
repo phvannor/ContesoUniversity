@@ -25,7 +25,7 @@ namespace ContosoUniversity.DomainManagers
 
         public override Task<bool> DeleteAsync(string id)
         {
-            return this.DeleteItemAsync(id);
+            return this.DeleteItemAsync(Convert.ToInt32(id));
         }
     }
 }

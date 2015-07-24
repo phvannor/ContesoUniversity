@@ -44,6 +44,11 @@ namespace ContosoUniversity.Controllers
         {
             return UpdateAsync(id, patch);
         }
+
+        public Task DeleteStudent(string id)
+        {
+            return DeleteAsync(id);
+        }
         /*
         // GET: api/Students
         [HttpGet, Route("api/students")]

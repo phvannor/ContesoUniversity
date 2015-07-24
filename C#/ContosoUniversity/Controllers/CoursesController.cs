@@ -36,5 +36,10 @@ namespace ContosoUniversity.Controllers
             return UpdateAsync(id, patch);            
         }
 
+
+        public Task DeleteCourse(string id)
+        {
+            return DeleteAsync(id);
+        }
     }
 }

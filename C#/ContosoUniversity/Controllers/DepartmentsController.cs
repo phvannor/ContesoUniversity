@@ -34,6 +34,11 @@ namespace ContosoUniversity.Controllers
         public Task<DepartmentDTO> PatchDepartments(string id, Delta<DepartmentDTO> patch)
         {
             return UpdateAsync(id, patch);
-        }        
+        }
+
+        public Task DeleteDepartment(string id)
+        {
+            return DeleteAsync(id);
+        }
     }
 }
