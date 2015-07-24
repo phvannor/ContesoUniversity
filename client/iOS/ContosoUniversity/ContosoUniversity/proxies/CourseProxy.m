@@ -18,19 +18,25 @@
     
     if (self) {
         _client = client;
-        _table = [client syncTableWithName:tableName];
+        _table = [client tableWithName:tableName];
     }
     
     return self;
 }
 
-- (void)insert:(CourseModel *)course completion:(MSSyncItemBlock)completion {
+- (void)insert:(Courses *)course completion:(MSSyncItemBlock)completion {
     
-    [self.table insert:course.dictionary completion:completion];
+//    [self.table insert:course.dictionary completion:completion];
 }
 
 - (void)pullData:(MSSyncBlock)completion {
-    [self.table pullWithQuery:[self.table query] queryId:nil completion:completion];
+    
+    [self.table readWithCompletion:^(MSQueryResult *result, NSError *error) {
+        if (!error) {
+            [self.client.syncContext.dataSource upsertItems:result.items table:@"Courses" orError:&error];
+        }
+        completion(error);
+    }];
 }
 
 @end

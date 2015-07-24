@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
-#import "CourseModel.h"
+#import "Courses.h"
 
 @interface CourseProxy : NSObject
 
 @property (nonatomic) MSClient *client;
 
-@property (nonatomic) MSSyncTable *table;
+@property (nonatomic) MSTable *table;
 
 - (instancetype)initWithMobileAppClient:(MSClient *)client tableName:(NSString *)tableName;
 
-- (void)insert:(CourseModel *)course completion:(MSSyncItemBlock)completion;
+- (void)insert:(Courses *)course completion:(MSSyncItemBlock)completion;
 
 - (void)pullData:(MSSyncBlock)completion;
 
