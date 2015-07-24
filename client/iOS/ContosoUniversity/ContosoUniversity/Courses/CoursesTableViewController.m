@@ -8,12 +8,16 @@
 
 #import "CoursesTableViewController.h"
 #import "AppDelegate.h"
+#import "CourseProxy.h"
 
 @interface CoursesTableViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
 
-@implementation CoursesTableViewController
+@implementation CoursesTableViewController {
+    CourseProxy *courseProxy;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +27,30 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    courseProxy = [[CourseProxy alloc] initWithMobileAppClient:delegate.client tableName:@"Courses"];
+    
+    CourseModel *course = [[CourseModel alloc] init];
+    course.departmentID = 101;
+    course.credits = 1001;
+    course.title = @"course title";
+    course.id = @"someid";
+    
+    
+/*
+    [courseProxy insert:nil completion:^(NSDictionary * __nullable item, NSError * __nullable error) {
+        int i = 1;
+        i = i;
+    }];
+ */
+    
+    [courseProxy pullData:^(NSError * __nullable error) {
+        int i = 1;
+        i = i;
+    }];
+    
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
