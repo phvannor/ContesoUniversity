@@ -22,7 +22,7 @@
 		D0282F2F1B62A73C007880CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0282F2D1B62A73C007880CE /* LaunchScreen.xib */; };
 		D0282F3B1B62A73C007880CE /* ContosoUniversityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F3A1B62A73C007880CE /* ContosoUniversityTests.m */; };
 		D0282F461B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0282F441B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodeld */; };
-		D0282F4D1B62B36E007880CE /* CourseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F4C1B62B36E007880CE /* CourseProxy.m */; };
+		D0282F4D1B62B36E007880CE /* TableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0282F4C1B62B36E007880CE /* TableProxy.m */; };
 		D06635E81B62F27D0034434F /* Courses.m in Sources */ = {isa = PBXBuildFile; fileRef = D06635E71B62F27D0034434F /* Courses.m */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,8 @@
 		D0282F391B62A73C007880CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0282F3A1B62A73C007880CE /* ContosoUniversityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContosoUniversityTests.m; sourceTree = "<group>"; };
 		D0282F451B62AC66007880CE /* ContosoUniversityDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContosoUniversityDataModel.xcdatamodel; sourceTree = "<group>"; };
-		D0282F4B1B62B355007880CE /* CourseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseProxy.h; path = proxies/CourseProxy.h; sourceTree = "<group>"; };
-		D0282F4C1B62B36E007880CE /* CourseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseProxy.m; path = proxies/CourseProxy.m; sourceTree = "<group>"; };
+		D0282F4B1B62B355007880CE /* TableProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableProxy.h; path = proxies/TableProxy.h; sourceTree = "<group>"; };
+		D0282F4C1B62B36E007880CE /* TableProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableProxy.m; path = proxies/TableProxy.m; sourceTree = "<group>"; };
 		D06635E61B62F27D0034434F /* Courses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Courses.h; path = models/Courses.h; sourceTree = "<group>"; };
 		D06635E71B62F27D0034434F /* Courses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Courses.m; path = models/Courses.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,8 +198,8 @@
 		D0282F471B62B2C0007880CE /* proxies */ = {
 			isa = PBXGroup;
 			children = (
-				D0282F4B1B62B355007880CE /* CourseProxy.h */,
-				D0282F4C1B62B36E007880CE /* CourseProxy.m */,
+				D0282F4B1B62B355007880CE /* TableProxy.h */,
+				D0282F4C1B62B36E007880CE /* TableProxy.m */,
 			);
 			name = proxies;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 				A31A0C3D1B62D472003BABF8 /* DepartmentsTableViewController.m in Sources */,
 				D0282F241B62A73C007880CE /* FirstViewController.m in Sources */,
 				D0282F1E1B62A73C007880CE /* main.m in Sources */,
-				D0282F4D1B62B36E007880CE /* CourseProxy.m in Sources */,
+				D0282F4D1B62B36E007880CE /* TableProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

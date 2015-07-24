@@ -1,14 +1,14 @@
 //
-//  CourseProxy.m
+//  TableProxy.m
 //  ContosoUniversity
 //
 //  Created by Shrirang on 7/24/15.
 //  Copyright (c) 2015 Microsoft. All rights reserved.
 //
 
-#import "CourseProxy.h"
+#import "TableProxy.h"
 
-@implementation CourseProxy
+@implementation TableProxy
 
 @synthesize table = _table;
 
@@ -22,11 +22,6 @@
     }
     
     return self;
-}
-
-- (void)insert:(Courses *)course completion:(MSSyncItemBlock)completion {
-    
-//    [self.table insert:course.dictionary completion:completion];
 }
 
 - (void)pullData:(MSSyncBlock)completion {

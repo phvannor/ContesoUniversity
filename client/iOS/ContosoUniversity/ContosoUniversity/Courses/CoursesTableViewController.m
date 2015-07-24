@@ -9,14 +9,14 @@
 #import "CoursesTableViewController.h"
 #import "AppDelegate.h"
 #import "Courses.h"
-#import "CourseProxy.h"
+#import "TableProxy.h"
 
 @interface CoursesTableViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation CoursesTableViewController {
-    CourseProxy *courseProxy;
+    TableProxy *tableProxy;
 }
 
 
@@ -31,9 +31,9 @@
     
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    courseProxy = [[CourseProxy alloc] initWithMobileAppClient:delegate.client tableName:@"Courses"];
+    tableProxy = [[TableProxy alloc] initWithMobileAppClient:delegate.client tableName:@"Courses"];
     
-    [courseProxy pullData:nil];
+    [tableProxy pullData:nil];
     
     
     NSError *error;
