@@ -1,21 +1,19 @@
 //
-//  CoursesTableViewController.m
+//  DepartmentsTableViewController.m
 //  ContosoUniversity
 //
 //  Created by Phillip Van Nortwick on 7/24/15.
 //  Copyright (c) 2015 Microsoft. All rights reserved.
 //
 
-#import "CoursesTableViewController.h"
+#import "DepartmentsTableViewController.h"
 #import "AppDelegate.h"
-#import "Courses.h"
 
-@interface CoursesTableViewController ()
+@interface DepartmentsTableViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
 
-@implementation CoursesTableViewController
-
+@implementation DepartmentsTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,40 +30,23 @@
     }
 }
 
-- (void) addRecord
-{
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    
-    Courses *course = [[Courses alloc] initWithEntity:[NSEntityDescription entityForName:@"Courses" inManagedObjectContext:context]
-                                       insertIntoManagedObjectContext:context];
-    
-    course.title = @"Phil's Test Class";
-    course.id = @"P1";
-    course.departmentID = @13;
-    
-    [context save:nil];
-}
-
 - (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
-    // [self addRecord];
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     
-    fetchRequest.entity = [NSEntityDescription entityForName:@"Courses" inManagedObjectContext:context];
+    fetchRequest.entity = [NSEntityDescription entityForName:@"Departments" inManagedObjectContext:context];
     
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
     NSFetchedResultsController *theFetchedResultsController =
-        [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                            managedObjectContext:context sectionNameKeyPath:nil
-                                                       cacheName:nil];
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:context sectionNameKeyPath:nil
+                                                   cacheName:nil];
     self.fetchedResultsController = theFetchedResultsController;
     
     _fetchedResultsController.delegate = self;
@@ -92,58 +73,58 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DepartmentCell" forIndexPath:indexPath];
     
     NSManagedObject *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = [item valueForKey:@"title"];
+    cell.textLabel.text = [item valueForKey:@"name"];
     
     return cell;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 #pragma mark * NSFetchedResultsController methods
@@ -224,7 +205,5 @@
         [self.tableView endUpdates];
     });
 }
-
-
 
 @end
