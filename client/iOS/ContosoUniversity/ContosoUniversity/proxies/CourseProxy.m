@@ -26,7 +26,7 @@
 
 - (void)insert:(Courses *)course completion:(MSSyncItemBlock)completion {
     
-    [self.table insert:course.dictionary completion:completion];
+//    [self.table insert:course.dictionary completion:completion];
 }
 
 - (void)pullData:(MSSyncBlock)completion {
@@ -34,7 +34,9 @@
         if (!error) {
             [self.client.syncContext.dataSource upsertItems:result.items table:@"Courses" orError:&error];
         }
-        completion(error);
+        if (completion != nil) {
+            completion(error);
+        }
     }];
 }
 
